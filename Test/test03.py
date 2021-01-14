@@ -149,6 +149,34 @@ def solution8(password, key):
 password = "1234lsa korean uk"
 key = "klu"
 ret = solution8(password, key)
-print(f'solution8 함수의 반환값은 {ret}입니다.')
-print(f'solution9 함수의 반환값은 {ret}입니다.')
+# print(f'solution8 함수의 반환값은 {ret}입니다.')
+
+# 9
+def solution9(scores):
+    result = [0, 0, 0, 0]
+    for i in range(4):
+        for k in range(4):
+            if i != k:
+                result[i] += scores[i][k] * 2
+    return result
+
+scores = [[0, 1, 1, 1],
+          [0, 0, 0, 0],
+          [0, 1, 0, 0],
+          [0, 0, 0, 0]]
+ret = solution9(scores)
+# print(f'solution9 함수의 반환값은 {ret}입니다.')
+
+# 10
+def solution10(strings):
+    result = 0
+    for s in strings:
+        length = len(s)
+        result += (length // 4)
+        if length % 4 != 0:
+            result += 1
+    return result
+
+strings = ["1234", "1234", "1234"]
+ret = solution10(strings)
 print(f'solution10 함수의 반환값은 {ret}입니다.')
